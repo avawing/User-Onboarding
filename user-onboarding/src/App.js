@@ -72,12 +72,47 @@ const postNewUser = (newUser) =>{
   }
 
   const checkBoxChange = (name, isChecked) => {
+    yup
+    .reach(formSchema, name)
+    .validate(isChecked)
+    .then(valid => {
+      setFormErrors({
+        ...formErrors, [name]: ''
+      })
+    })
+    .catch(err => {
+      setFormErrors({
+        ...formErrors,
+        [name]: err.errors[0],
+      })
+    })
     setFormValues({
       ...formValues,
         [name]: isChecked, 
       }
     )
   }
+
+  const onSubmit = () => {
+    const newUser = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role.trim(),
+      termsOfService: formValues.termsOfService,
+  }
+  postNewUser(newUser)
+}
+
+useEffect(() => {
+  getUsers()
+}, [])
+
+useEffect(() => {
+  // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
+  formSchema.isValid(formValues).then(valid => {
+    setDisabled(!valid)
+  })
+}, [formValues])
 
   return (
 
