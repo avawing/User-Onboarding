@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function users(props){
-    const details = (props)
+    const details = props.details
+    
+
     return (
         <>
     <h1>Welcome, {details.name}</h1>

@@ -10,13 +10,15 @@ const emptyForm = {
   name: '',
   email: '',
   password: '',
+  role: null,
   termsOfService: false
 }
 
 const initialFormErrors = {
   name: '',
   email: '',
-  password: ''
+  password: '',
+  role: null
 }
 
 const initialUsers = []
@@ -33,8 +35,7 @@ const postNewUser = (newUser) =>{
   axios
   .post(`https://reqres.in/api/users`, newUser)
   .then(res => {
-    console.log(res)
-    setUsers(res.data, ...users)
+    setUsers([res.data, ...users])
     setFormValues(emptyForm)
   })
   .catch(e => {
