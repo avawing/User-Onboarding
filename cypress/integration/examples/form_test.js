@@ -65,4 +65,13 @@ describe('Inputs and submit button', () => {
         .get('#submitBtn')
         .click()
     })
+    it('has been posted', () => {
+        cy
+        .get('h1')
+        .contains('Welcome, Ava')
+        .get('h2')
+        .contains(`We have stored your email, ava@ava.com`)
+        .get('h3')
+        .contains('We hope you are happy in your new role, Team Leader')
+    })
 })
