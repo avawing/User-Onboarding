@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Forma from './components/Form'
+import User from './components/User'
 import axios from 'axios'
 import * as yup from 'yup'
 import formSchema from './validation/formSchema'
@@ -110,10 +111,17 @@ useEffect(() => {
         <Forma values = {formValues}
         submit = {onSubmit}
         inputChange = {inputChange}
-        checkBoxChange = {checkBoxChange}
+        checkboxChange = {checkBoxChange}
         disabled = {disabled}
         errors = {formErrors}/>
       </header>
+      {
+        users.map(user => {
+          return (
+            <User key={user.name} details={user} />
+          )
+        })
+      }
     </div>
   );
 }
