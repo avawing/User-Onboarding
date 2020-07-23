@@ -27,16 +27,7 @@ const [formValues, setFormValues] = useState(emptyForm)
 const [formErrors, setFormErrors] = useState(initialFormErrors)
 const [disabled, setDisabled] = useState(initialDisabled)
 
-const getUsers = () =>{
-  axios
-  .get(`https://reqres.in/api/users`)
-  .then(res => {
-    setUsers(res.data)
-  })
-  .catch(e => {
-    throw `Everything is broken forever: ${e}`
-  })
-}
+
 const postNewUser = (newUser) =>{
   axios
   .post(`https://reqres.in/api/users`, newUser)
@@ -103,12 +94,8 @@ const postNewUser = (newUser) =>{
   postNewUser(newUser)
 }
 
-useEffect(() => {
-  getUsers()
-}, [])
 
 useEffect(() => {
-  // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
   formSchema.isValid(formValues).then(valid => {
     setDisabled(!valid)
   })
@@ -120,7 +107,12 @@ useEffect(() => {
 
     <div className="App">
       <header className="App-header">
-        <Forma />
+        <Forma values = {formValues}
+        submit = {onSubmit}
+        inputChange = {inputChange}
+        checkBoxChange = {checkBoxChange}
+        disabled = {disabled}
+        errors = {formErrors}/>
       </header>
     </div>
   );

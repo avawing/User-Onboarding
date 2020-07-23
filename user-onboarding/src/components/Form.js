@@ -2,7 +2,15 @@ import React from 'react';
 import { Button, Form, Label, Input} from 'reactstrap';
 
 function Forma(props){
-    const {} = props
+    const {
+        values,
+        submit,
+        inputChange,
+        checkboxChange,
+        disabled,
+        errors,
+      } = props
+    
     return (
         <Form>
             <Label htmlFor = "name">Name: </Label>
@@ -10,21 +18,25 @@ function Forma(props){
             name = "name" 
             type = "text" 
             id = "name"
-            placeholder = "Name"/>
+            placeholder = "Name"
+            values = {values.name}
+            />
 
             <Label htmlFor = "email">Email:</Label>
             <Input 
             name = "email"
             type = "email"
             id = "email"
-            placeholder = "email@email.com"/>
+            placeholder = "email@email.com"
+            values = {values.email}/>
 
             <Label htmlFor="password">Password:</Label>
             <Input
             name = "password"          
             type = "password"
             id = "password"
-            placeholder = "********"/>
+            placeholder = "********"
+            values = {values.password}/>
 
             <Label htmlFor = "role">Role</Label>
             <Input
@@ -42,7 +54,7 @@ function Forma(props){
             name = "termsOfService"
             type = "checkbox"
             id = "termsOfService"
-            check>{' '}I agree! </Input>
+            checked = {values.termsOfService === true}></Input>
             <br/>
             <Button>Submit</Button>
 

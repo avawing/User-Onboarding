@@ -6,21 +6,23 @@ We've seen many different styles of form management by now -- simple to complex.
 
 ## Set Up The Project
 
-- [ ] Start off by installing a blank React app by running `npx create-react-app <app-name> --use-npm`.
-- [ ] Using `npm`, add the following as dependencies inside your React app:
+- [x] Start off by installing a blank React app by running `npx create-react-app <app-name> --use-npm`.
+- [x] Using `npm`, add the following as dependencies inside your React app:
   - `yup`
   - `axios`
-- [ ] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
+- [x] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
 
 ## STEP 1 - Create Your Advanced Form
 
 We want to create a form to onboard a new user to our system. We need _at least_ the following pieces of information about our new user:
 
-- [ ] Name
-- [ ] Email
-- [ ] Password
-- [ ] Terms of Service (checkbox)
-- [ ] A Submit button to send our form data to the server.
+- [x] Name
+- [x] Email
+- [x] Password
+- [x] Terms of Service (checkbox)
+- [x] A Submit button to send our form data to the server.
+
+On the form: set the value
 
 ## STEP 2 - Implement Form Validation and Error Messaging
 
@@ -49,7 +51,7 @@ When you get your data back, you will want to do something with it, right? Let's
 
 The following are stretch goals that you should attempt _after_ you meet MVP for your project:
 
-- [ ] Add basic styling to your form in your app. Make it look pretty with any styling method you choose.
+- [x] Add basic styling to your form in your app. Make it look pretty with any styling method you choose.
 - [ ] Implement a dropdown menu in your form. Add a `role` value to your state and add a dropdown with different roles for your users.
-- [ ] Create 3 new inputs inside your form of your choice along with corresponding validation and error messaging
+- [x] Create 3 new inputs inside your form of your choice along with corresponding validation and error messaging
 - [ ] Add to your existing handling so that, if a user inputs their email as `waffle@syrup.com`, they receive an error message in their form that says _"That email is already taken."_
