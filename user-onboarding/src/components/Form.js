@@ -88,7 +88,7 @@ function Forma(props){
           <div>{errors.role}</div>
           <div>{errors.civil}</div>
         </div>
-            <Button disabled = {disabled}>Submit</Button>
+            <Button id = 'submitBtn'disabled = {disabled}>Submit</Button>
 
 
         </Form>
