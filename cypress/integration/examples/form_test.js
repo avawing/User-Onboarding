@@ -1,8 +1,9 @@
 describe('Inputs and submit button', () => {
     it('can navigate to the site', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000/')
     cy.url().should('include', 'localhost')
     })
+
     it('can check that button is disabled', ()=>{
         cy.get('#submitBtn').should('be.disabled')
     })

@@ -1,4 +1,5 @@
 import * as yup from 'yup'
+import "yup-phone"
 
 const formSchema = yup.object().shape({
   email: yup
